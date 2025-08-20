@@ -179,6 +179,21 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-green);
     letter-spacing: -0.02em;
 }
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(1.1) contrast(1.1);
+}
+
+.nav-logo .logo-image {
+    height: 45px;
+}
+
+.footer-logo .logo-image {
+    height: 60px;
+}
 /* Navigation Menu */
 .nav-menu {
     display: flex;
@@ -353,6 +368,13 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow-xl);
+}
+
+.phone-app-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
 }
 
 .app-interface {
@@ -2227,3 +2249,4 @@ textarea:focus {
         min-width: auto;
     }
 }
+
