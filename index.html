@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURED1 - Premium Golf Video Capture</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <h1 class="logo-text">PURED1</h1>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#my-account" class="nav-link">My Account</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="#pages" class="nav-link">Pages</a>
+                <button class="nav-cta" onclick="logout()">Logout</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-bg-image"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Scan QR Code at Tee Box</h1>
+                <p class="hero-subtitle">Professional-grade golf video capture with AI ball tracing technology. 4K resolution and 120fps frame rate.</p>
+                
+                <!-- QR Code Scanner Section -->
+                <div class="qr-scanner-section">
+                    <div class="qr-instructions">
+                        <i class="fas fa-qrcode"></i>
+                        <h3>Scan PURED1 QR Code</h3>
+                        <p>Point your camera at the QR code on the tee box to start recording</p>
+                    </div>
+                    <button class="btn-primary qr-scan-btn" onclick="startQRScan()">
+                        <i class="fas fa-camera"></i>
+                        Scan QR Code
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-video"></i>
+                        <span>4K Resolution</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>120fps</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Tracing</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bolt"></i>
+                        <span>Instant Delivery</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-interface">
+                            <div class="camera-view">
+                                <div class="golf-scene">
+                                    <div class="golf-ball"></div>
+                                    <div class="trajectory-line"></div>
+                                </div>
+                            </div>
+                            <div class="app-controls">
+                                <button class="record-btn">
+                                    <i class="fas fa-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboards Section -->
+    <section class="leaderboards">
+        <div class="container">
+            <h2 class="section-title">Daily Leaderboards</h2>
+            
+            <!-- Leaderboard Tabs -->
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" onclick="showLeaderboard('holeInOne')">Hole in Ones</button>
+                <button class="tab-btn" onclick="showLeaderboard('closestToPin')">Closest to Pin</button>
+            </div>
+
+            <!-- Course Filter -->
+            <div class="course-filter">
+                <label for="courseSelect">Filter by Course:</label>
+                <select id="courseSelect" onchange="filterLeaderboard()">
+                    <option value="all">All Courses</option>
+                    <option value="augusta">Augusta National</option>
+                    <option value="pebble">Pebble Beach</option>
+                    <option value="st-andrews">St. Andrews</option>
+                    <option value="pinehurst">Pinehurst</option>
+                </select>
+            </div>
+
+            <!-- Hole in One Leaderboard -->
+            <div id="holeInOneLeaderboard" class="leaderboard active">
+                <div class="leaderboard-header">
+                    <h3>Today's Hole in Ones</h3>
+                    <span class="leaderboard-date">December 15, 2024</span>
+                </div>
+                <div class="leaderboard-table">
+                    <div class="leaderboard-row header">
+                        <span class="rank">Rank</span>
+                        <span class="player">Player</span>
+                        <span class="course">Course</span>
+                        <span class="hole">Hole</span>
+                        <span class="time">Time</span>
+                    </div>
+                    <div class="leaderboard-row">
+                        <span class="rank">1</span>
+                        <span class="player">John Smith</span>
+                        <span class="course">Augusta National</span>
+                        <span class="hole">Hole 16</span>
+                        <span class="time">2:30 PM</span>
+                    </div>
+                    <div class="leaderboard-row">
+                        <span class="rank">2</span>
+                        <span class="player">Sarah Johnson</span>
+                        <span class="course">Pebble Beach</span>
+                        <span class="hole">Hole 7</span>
+                        <span class="time">1:45 PM</span>
+                    </div>
+                    <div class="leaderboard-row">
+                        <span class="rank">3</span>
+                        <span class="player">Mike Davis</span>
+                        <span class="course">St. Andrews</span>
+                        <span class="hole">Hole 12</span>
+                        <span class="time">11:20 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closest to Pin Leaderboard -->
+            <div id="closestToPinLeaderboard" class="leaderboard">
+                <div class="leaderboard-header">
+                    <h3>Today's Closest to Pin</h3>
+                    <span class="leaderboard-date">December 15, 2024</span>
+                </div>
+                <div class="leaderboard-table">
+                    <div class="leaderboard-row header">
+                        <span class="rank">Rank</span>
+                        <span class="player">Player</span>
+                        <span class="course">Course</span>
+                        <span class="hole">Hole</span>
+                        <span class="distance">Distance</span>
+                        <span class="time">Time</span>
+                    </div>
+                    <div class="leaderboard-row">
+                        <span class="rank">1</span>
+                        <span class="player">Alex Wilson</span>
+                        <span class="course">Augusta National</span>
+                        <span class="hole">Hole 12</span>
+                        <span class="distance">2' 3"</span>
+                        <span class="time">3:15 PM</span>
+                    </div>
+                    <div class="leaderboard-row">
+                        <span class="rank">2</span>
+                        <span class="player">Emily Brown</span>
+                        <span class="course">Pebble Beach</span>
+                        <span class="hole">Hole 17</span>
+                        <span class="distance">3' 1"</span>
+                        <span class="time">2:45 PM</span>
+                    </div>
+                    <div class="leaderboard-row">
+                        <span class="rank">3</span>
+                        <span class="player">David Lee</span>
+                        <span class="course">Pinehurst</span>
+                        <span class="hole">Hole 5</span>
+                        <span class="distance">3' 8"</span>
+                        <span class="time">1:30 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Professional Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>QR Code Scanner</h3>
+                    <p>Quick setup with course QR codes for instant integration</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure Authentication</h3>
+                    <p>Professional user management with secure login</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Payment Integration</h3>
+                    <p>Seamless $5 per recording with secure processing</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Video Dashboard</h3>
+                    <p>Manage and organize all your recordings</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3>Social Sharing</h3>
+                    <p>Share highlights across all social platforms</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Highlight Reel Creator</h3>
+                    <p>Professional editing tools for perfect highlights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+  
+
+    <!-- Video Dashboard -->
+    <section class="video-dashboard">
+        <div class="container">
+            <h2 class="section-title">Your Recordings</h2>
+            <div class="dashboard-header">
+                <div class="dashboard-stats">
+                    <div class="stat">
+                        <span class="stat-number">24</span>
+                        <span class="stat-label">Recordings</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$120</span>
+                        <span class="stat-label">Total Spent</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Courses</span>
+                    </div>
+                </div>
+                <button class="btn-primary">New Recording</button>
+            </div>
+            <div class="recordings-grid">
+                <div class="recording-card">
+                    <div class="recording-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="recording-info">
+                        <h4>Peachtree Golf Club</h4>
+                        <p>Hole 17 - Driver</p>
+                        <span class="recording-date">Today, 2:30 PM</span>
+                    </div>
+                </div>
+                <div class="recording-card">
+                    <div class="recording-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="recording-info">
+                        <h4>Augusta National</h4>
+                        <p>Hole 12 - Iron</p>
+                        <span class="recording-date">Yesterday, 4:15 PM</span>
+                    </div>
+                </div>
+                <div class="recording-card">
+                    <div class="recording-thumbnail">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="recording-info">
+                        <h4>Pebble Beach</h4>
+                        <p>Hole 7 - Putter</p>
+                        <span class="recording-date">2 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Sharing Interface -->
+    <section class="social-sharing">
+        <div class="container">
+            <h2 class="section-title">Share Your Highlights</h2>
+            <div class="sharing-interface">
+                <div class="video-preview">
+                    <div class="video-player">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                            <p>Your highlight video</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sharing-options">
+                    <h3>Share to Social Media</h3>
+                    <div class="social-buttons">
+                        <a href="https://www.instagram.com/pured1golf/" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.youtube.com/@Pured1golf" target="_blank" class="social-btn youtube">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@pured1_golf" target="_blank" class="social-btn tiktok">
+                            <i class="fab fa-tiktok"></i>
+                            <span>TikTok</span>
+                        </a>
+                    </div>
+                    <div class="share-link">
+                        <input type="text" value="https://pured1.com/share/abc123" readonly>
+                        <button class="btn-secondary">Copy Link</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Reel Creator -->
+    <section class="highlight-creator">
+        <div class="container">
+            <h2 class="section-title">Create Your Highlight Reel</h2>
+            <div class="creator-interface">
+                <div class="timeline">
+                    <div class="timeline-header">
+                        <h3>Timeline</h3>
+                        <span>3 clips selected</span>
+                    </div>
+                    <div class="timeline-clips">
+                        <div class="clip">
+                            <div class="clip-thumbnail"></div>
+                            <span class="clip-duration">0:15</span>
+                        </div>
+                        <div class="clip">
+                            <div class="clip-thumbnail"></div>
+                            <span class="clip-duration">0:12</span>
+                        </div>
+                        <div class="clip">
+                            <div class="clip-thumbnail"></div>
+                            <span class="clip-duration">0:18</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="editor-preview">
+                    <div class="preview-window">
+                        <div class="preview-placeholder">
+                            <i class="fas fa-film"></i>
+                            <p>Preview your highlight reel</p>
+                        </div>
+                    </div>
+                    <div class="editor-controls">
+                        <button class="btn-secondary">
+                            <i class="fas fa-plus"></i>
+                            Add Clip
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-cut"></i>
+                            Trim
+                        </button>
+                        <button class="btn-primary">
+                            <i class="fas fa-music"></i>
+                            Add Music
+                        </button>
+                        <button class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple Pricing</h2>
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3>Pricing</h3>
+                    <div class="price">
+                        <span class="amount">To be determined</span>
+                        <span class="period">in testing phase</span>
+                    </div>
+                </div>
+                <div class="pricing-features">
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>4K Ultra HD Quality</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>120fps Frame Rate</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Professional Analysis</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Social Media Ready</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-check"></i>
+                        <span>Cloud Storage</span>
+                    </div>
+                </div>
+                <button class="btn-primary">Start Recording</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="trust-background">
+            <div class="trust-bg-image"></div>
+            <div class="trust-overlay"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Trusted by Professionals</h2>
+            <div class="trust-content">
+                <div class="trust-stats">
+                    <div class="trust-stat">
+                        <span class="trust-number">10,000+</span>
+                        <span class="trust-label">Recordings</span>
+                    </div>
+                    <div class="trust-stat">
+                        <span class="trust-number">500+</span>
+                        <span class="trust-label">Courses</span>
+                    </div>
+                    <div class="trust-stat">
+                        <span class="trust-number">98%</span>
+                        <span class="trust-label">Satisfaction</span>
+                    </div>
+                </div>
+                <div class="course-integration">
+                    <h3>Course Integration</h3>
+                    <p>Seamlessly integrated with leading golf courses worldwide</p>
+                    <div class="course-logos">
+                        <div class="course-logo">Augusta National</div>
+                        <div class="course-logo">Pebble Beach</div>
+                        <div class="course-logo">St. Andrews</div>
+                        <div class="course-logo">Pinehurst</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Ready to elevate your game?</h3>
+                    <p>Contact us for course integration or technical support</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <span>DixonWelborn@pured1.com</span>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (123) 456-7890</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea placeholder="Tell us about your needs"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+        <div class="container">
+            <h2 class="section-title">Follow PURED1</h2>
+            <p class="social-subtitle">Stay updated with the latest golf technology and swing analysis</p>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/pured1golf/" target="_blank" class="social-card instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>Instagram</h3>
+                        <p>Follow for swing tips and behind-the-scenes content</p>
+                        <span class="social-handle">@pured1golf</span>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/@Pured1golf" target="_blank" class="social-card youtube">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>YouTube</h3>
+                        <p>Watch detailed swing analysis and tutorials</p>
+                        <span class="social-handle">@Pured1golf</span>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="https://www.tiktok.com/@pured1_golf" target="_blank" class="social-card tiktok">
+                    <div class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="social-content">
+                        <h3>TikTok</h3>
+                        <p>Quick tips and viral golf moments</p>
+                        <span class="social-handle">@pured1_golf</span>
+                    </div>
+                    <div class="social-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <h2 class="logo-text">PURED1</h2>
+                    </div>
+                    <p>Premium golf video capture technology</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#">Features</a>
+                        <a href="#">Pricing</a>
+                        <a href="#">Integration</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact</a>
+                        <a href="#">API Docs</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <a href="#">About</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PURED1. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // QR Code Scanning Functionality
+        function startQRScan() {
+            // Check if device supports camera
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert('Camera access is not supported on this device');
+                return;
+            }
+
+            // Request camera permission and start scanning
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+                .then(function(stream) {
+                    // Create video element for camera feed
+                    const video = document.createElement('video');
+                    video.srcObject = stream;
+                    video.play();
+
+                    // Create scanning overlay
+                    const overlay = document.createElement('div');
+                    overlay.className = 'qr-scan-overlay';
+                    overlay.innerHTML = `
+                        <div class="scan-frame">
+                            <div class="scan-corners">
+                                <div class="corner top-left"></div>
+                                <div class="corner top-right"></div>
+                                <div class="corner bottom-left"></div>
+                                <div class="corner bottom-right"></div>
+                            </div>
+                            <p>Position QR code within frame</p>
+                        </div>
+                        <button class="close-scan" onclick="stopQRScan()">Cancel</button>
+                    `;
+
+                    document.body.appendChild(overlay);
+                    document.body.appendChild(video);
+
+                    // Simulate QR code detection (in real implementation, you'd use a QR code library)
+                    setTimeout(() => {
+                        stopQRScan();
+                        handleQRCodeDetected();
+                    }, 3000);
+                })
+                .catch(function(err) {
+                    alert('Unable to access camera: ' + err.message);
+                });
+        }
+
+        function stopQRScan() {
+            const overlay = document.querySelector('.qr-scan-overlay');
+            const video = document.querySelector('video');
+            if (overlay) overlay.remove();
+            if (video) {
+                video.srcObject.getTracks().forEach(track => track.stop());
+                video.remove();
+            }
+        }
+
+        function handleQRCodeDetected() {
+            // Show payment modal
+            showPaymentModal();
+        }
+
+        function showPaymentModal() {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Complete Recording Purchase</h3>
+                        <button class="close-btn" onclick="closePaymentModal()">&times;</button>
+                    </div>
+                    <div class="payment-details">
+                        <p>Course: <strong>Augusta National - Hole 16</strong></p>
+                        <p>Recording Fee: <strong>$5.00</strong></p>
+                        <p>Includes: 4K video with AI ball tracing</p>
+                    </div>
+                    <div class="payment-options">
+                        <button class="btn-primary" onclick="processPayment()">
+                            <i class="fas fa-credit-card"></i>
+                            Pay $5.00
+                        </button>
+                        <button class="btn-secondary" onclick="closePaymentModal()">Cancel</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function closePaymentModal() {
+            const modal = document.querySelector('.modal');
+            if (modal) modal.remove();
+        }
+
+        function processPayment() {
+            // Simulate payment processing
+            const modal = document.querySelector('.modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="processing">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <h3>Processing Payment...</h3>
+                        <p>Starting your recording session</p>
+                    </div>
+                </div>
+            `;
+
+            setTimeout(() => {
+                closePaymentModal();
+                startRecording();
+            }, 2000);
+        }
+
+        function startRecording() {
+            // Show recording status
+            const notification = document.createElement('div');
+            notification.className = 'recording-notification';
+            notification.innerHTML = `
+                <div class="recording-status">
+                    <i class="fas fa-circle recording-indicator"></i>
+                    <span>Recording in progress...</span>
+                    <button onclick="stopRecording()">Stop</button>
+                </div>
+            `;
+            document.body.appendChild(notification);
+
+            // Simulate recording completion
+            setTimeout(() => {
+                stopRecording();
+            }, 5000);
+        }
+
+        function stopRecording() {
+            const notification = document.querySelector('.recording-notification');
+            if (notification) {
+                notification.innerHTML = `
+                    <div class="recording-complete">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Recording complete! Video processing...</span>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    notification.remove();
+                    showVideoReady();
+                }, 2000);
+            }
+        }
+
+        function showVideoReady() {
+            alert('Your video is ready! Check your account for the AI-traced ball flight video.');
+        }
+
+        // Leaderboard Functionality
+        function showLeaderboard(type) {
+            // Hide all leaderboards
+            document.querySelectorAll('.leaderboard').forEach(board => {
+                board.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected leaderboard
+            document.getElementById(type + 'Leaderboard').classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        function filterLeaderboard() {
+            const course = document.getElementById('courseSelect').value;
+            // In a real implementation, you would filter the leaderboard data
+            console.log('Filtering by course:', course);
+        }
+
+        // Logout Functionality
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'landing.html';
+            }
+        }
+    </script>
+</body>
+</html>

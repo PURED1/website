@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURED1 - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Landing Page Background -->
+    <div class="landing-background">
+        <div class="landing-overlay"></div>
+    </div>
+
+    <!-- Landing Content -->
+    <div class="landing-container">
+        <div class="landing-content">
+            <!-- Logo -->
+            <div class="landing-logo">
+                <h1 class="logo-text">PURED1</h1>
+                <p class="logo-tagline">Never miss a shot, relive it forever</p>
+            </div>
+
+            <!-- Welcome Message -->
+            <div class="welcome-section">
+                <h2>Welcome to PURED1</h2>
+                <p>Professional golf video capture with AI ball tracing technology</p>
+            </div>
+
+            <!-- Auth Options -->
+            <div class="auth-options">
+                <button class="auth-btn primary" onclick="showSignUp()">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </button>
+                <button class="auth-btn secondary" onclick="showSignIn()">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </button>
+            </div>
+
+            <!-- Features Preview -->
+            <div class="features-preview">
+                <div class="feature-item">
+                    <i class="fas fa-qrcode"></i>
+                    <span>Scan QR at Tee Box</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-video"></i>
+                    <span>4K 120fps Recording</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Ball Tracing</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>Instant Delivery</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signUpModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create Account</h3>
+                <button class="close-btn" onclick="closeModal('signUpModal')">&times;</button>
+            </div>
+            <form class="auth-form" onsubmit="handleSignUp(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required placeholder="Create a password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirmPassword" required placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" onclick="showSignIn()">Sign In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sign In</h3>
+                <button class="close-btn" onclick="closeModal('signInModal')">&times;</button>
+            </div>
+            <form class="auth-form" onsubmit="handleSignIn(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn-primary">Sign In</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" onclick="showSignUp()">Create Account</a></p>
+                <p><a href="#" onclick="showForgotPassword()">Forgot Password?</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSignUp() {
+            document.getElementById('signUpModal').style.display = 'flex';
+            document.getElementById('signInModal').style.display = 'none';
+        }
+
+        function showSignIn() {
+            document.getElementById('signInModal').style.display = 'flex';
+            document.getElementById('signUpModal').style.display = 'none';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault();
+            // Here you would typically send the data to your backend
+            console.log('Sign up submitted');
+            // Redirect to home page after successful signup
+            window.location.href = 'index.html';
+        }
+
+        function handleSignIn(event) {
+            event.preventDefault();
+            // Here you would typically send the data to your backend
+            console.log('Sign in submitted');
+            // Redirect to home page after successful signin
+            window.location.href = 'index.html';
+        }
+
+        function showForgotPassword() {
+            // Implement forgot password functionality
+            alert('Forgot password functionality would be implemented here');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
