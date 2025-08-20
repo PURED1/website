@@ -1,9 +1,9 @@
 /* CSS Variables - Design System */
 :root {
     /* Colors */
-    --primary-green: #37974f;
-    --primary-green-dark: #1d8326;
-    --electric-yellow: #fffebc;
+    --primary-green: #1a5e1f;
+    --primary-green-dark: #0e2810;
+    --electric-yellow: #ffff93;
     --dark-bg: #0a0a0a;
     --darker-bg: #050505;
     --card-bg: #111111;
@@ -2249,4 +2249,5 @@ textarea:focus {
         min-width: auto;
     }
 }
+
 
