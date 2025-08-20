@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 560px;
     background: var(--card-bg);
     border-radius: 30px;
-    border: 8px solid var(--border-color);
+    border: 5px solid var(darker-bg--border-color);
     position: relative;
     overflow: hidden;
     box-shadow: var(--shadow-xl);
@@ -2249,6 +2249,7 @@ textarea:focus {
         min-width: auto;
     }
 }
+
 
 
 
