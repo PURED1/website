@@ -3,7 +3,7 @@
     /* Colors */
     --primary-green: #1a5e1f;
     --primary-green-dark: #0e2810;
-    --electric-yellow: #ffff93;
+    --electric-yellow: #509241;
     --dark-bg: #0a0a0a;
     --darker-bg: #050505;
     --card-bg: #111111;
@@ -11,8 +11,8 @@
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-muted: #666666;
-    --border-color: #333333;
-    --border-light: #444444;
+    --border-color: #fbffc3b4;
+    --border-light: #e3ffbe;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary-green) 0%, var(--electric-yellow) 100%);
@@ -2249,5 +2249,6 @@ textarea:focus {
         min-width: auto;
     }
 }
+
 
 
