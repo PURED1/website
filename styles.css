@@ -3,7 +3,7 @@
     /* Colors */
     --primary-green: #1a5e1f;
     --primary-green-dark: #0e2810;
-    --electric-yellow: #509241;
+    --electric-yellow: #fff890;
     --dark-bg: #0a0a0a;
     --darker-bg: #050505;
     --card-bg: #111111;
@@ -49,8 +49,8 @@
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --shadow-glow: 0 0 20px rgba(0, 255, 136, 0.3);
-    --shadow-glow-blue: 0 0 20px rgba(0, 212, 255, 0.3);
+    --shadow-glow: 0 0 20px rgba(255, 249, 170, 0.377);
+    --shadow-glow-blue: 0 0 20px rgba(0, 255, 13, 0.3);
     
     /* Transitions */
     --transition-fast: 0.15s ease;
@@ -2249,6 +2249,7 @@ textarea:focus {
         min-width: auto;
     }
 }
+
 
 
 
