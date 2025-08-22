@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Pured1</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="account.html">My Account</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#" onclick="logout()">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="about-container">
+        <div class="account-section">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i>
+                About Pured1
+            </h2>
+            <div style="line-height: 1.8; color: #ccc;">
+                <p style="margin-bottom: 20px; font-size: 18px;">
+                    Pured1 is at the forefront of golf technology innovation, poised to revolutionize how players experience and share their game.
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    We're developing cutting-edge solutions that will transform the way golf highlights are captured, processed, and shared. Our technology combines advanced computer vision, artificial intelligence, and seamless user experience to create something truly groundbreaking in the golf industry.
+                </p>
+                
+                <p style="margin-bottom: 20px;">
+                    While we can't reveal all the details just yet, we're working tirelessly to bring you a product that will change the game forever. Our team of experts is dedicated to creating an experience that's both technologically advanced and incredibly user-friendly.
+                </p>
+                
+                <p style="margin-bottom: 30px;">
+                    <strong>Launch Date:</strong> 2026<br>
+                    <strong>Mission:</strong> Redefining golf highlights through innovation and technology
+                </p>
+            </div>
+        </div>
+
+        <div class="account-section">
+            <h2 class="section-title">
+                <i class="fas fa-rocket"></i>
+                What's Coming
+            </h2>
+            <div style="display: grid; gap: 20px;">
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                                         <h3 style="color: #488548; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                         <i class="fas fa-camera"></i>
+                         Advanced Capture Technology
+                     </h3>
+                    <p style="color: #ccc; margin: 0;">
+                        Revolutionary technology that captures your best moments automatically.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                                         <h3 style="color: #ffff94; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                         <i class="fas fa-brain"></i>
+                         AI-Powered Analysis
+                     </h3>
+                    <p style="color: #ccc; margin: 0;">
+                        Intelligent systems that identify and highlight your most impressive shots.
+                    </p>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                                         <h3 style="color: #488548; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                         <i class="fas fa-share-alt"></i>
+                         Seamless Sharing
+                     </h3>
+                    <p style="color: #ccc; margin: 0;">
+                        Easy-to-use platform for sharing your highlights with friends and social media.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="account-section">
+            <h2 class="section-title">
+                <i class="fas fa-users"></i>
+                Join the Revolution
+            </h2>
+            <div style="text-align: center; color: #ccc;">
+                <p style="margin-bottom: 20px; font-size: 18px;">
+                    Be among the first to experience the future of golf technology.
+                </p>
+                <p style="margin-bottom: 30px;">
+                    Follow us on social media for updates and sneak peeks as we get closer to launch.
+                </p>
+                
+                <div class="social-links" style="justify-content: center;">
+                    <a href="https://instagram.com/pured1golf" target="_blank" class="social-link" onclick="openSocialMedia('instagram')">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://tiktok.com/@pured1_golf" target="_blank" class="social-link" onclick="openSocialMedia('tiktok')">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    <a href="https://youtube.com/@Pured1golf" target="_blank" class="social-link" onclick="openSocialMedia('youtube')">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initPage();
+        });
+    </script>
+</body>
+</html>
