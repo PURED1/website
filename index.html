@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURED1 - Golf Technology Evolution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="PillNav.css">
+    <link rel="stylesheet" href="SpotlightCard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="LOGO.png">
+</head>
+<body>
+    <!-- Navigation will be dynamically created by PillNav component -->
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src="LOGO.png" alt="PURED1 Logo" class="hero-logo-img">
+                </div>
+                <h1 class="hero-title">COMING SOON</h1>
+                <h2 class="hero-subtitle">Revolutionizing Golf Entertainment</h2>
+                <p class="hero-description">
+                    Experience the future of golf technology with PURED1. 
+                    We're bringing cutting-edge innovation to the game you love.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary">Get Notified</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Slider Section -->
+    <section id="image-slider" class="image-slider">
+        <div class="container">
+            <h2 class="section-title">Golf Excellence</h2>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slide active" data-index="0">
+                        <div class="slide-content">
+                            <img src="jay par 3.jpg" alt="Jay Par 3" class="slide-image">
+                            <div class="slide-overlay">
+                                <h3>Perfect Par 3</h3>
+                                <p>Precision and focus on the short game</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" data-index="1">
+                        <div class="slide-content">
+                            <img src="matt duff.jpg" alt="Matt Duff" class="slide-image">
+                            <div class="slide-overlay">
+                                <h3>Masterful Approach</h3>
+                                <p>Strategic play from the fairway</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" data-index="2">
+                        <div class="slide-content">
+                            <img src="matt far.jpg" alt="Matt Far" class="slide-image">
+                            <div class="slide-overlay">
+                                <h3>Long Drive Power</h3>
+                                <p>Distance and accuracy combined</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" data-index="3">
+                        <div class="slide-content">
+                            <img src="randypar3.jpg" alt="Randy Par 3" class="slide-image">
+                            <div class="slide-overlay">
+                                <h3>Par 3 Excellence</h3>
+                                <p>Consistency under pressure</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" data-index="4">
+                        <div class="slide-content">
+                            <img src="Screenshot 2025-08-20 013217.png" alt="Golf Technology" class="slide-image">
+                            <div class="slide-overlay">
+                                <h3>PURED1 Technology</h3>
+                                <p>Revolutionizing golf entertainment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation Dots -->
+                <div class="slider-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <button class="slider-arrow prev" aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow next" aria-label="Next slide">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions Section -->
+    <section class="quick-actions">
+        <div class="container">
+            <h2 class="section-title">Quick Actions</h2>
+            <div class="actions-grid">
+                <div class="card-spotlight action-card" data-spotlight-color="rgba(255, 107, 107, 0.3)">
+                    <div class="action-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <h3>Highlights</h3>
+                    <p>Watch the best moments from today's rounds</p>
+                    <button class="btn btn-primary">View Highlights</button>
+                </div>
+                <div class="card-spotlight action-card" data-spotlight-color="rgba(107, 255, 107, 0.3)">
+                    <div class="action-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>Scan QR Code</h3>
+                    <p>Quick access to course information and scoring</p>
+                    <button class="btn btn-primary">Scan Now</button>
+                </div>
+                <div class="card-spotlight action-card" data-spotlight-color="rgba(107, 107, 255, 0.3)">
+                    <div class="action-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Hole in One Alerts</h3>
+                    <p>Get notified of amazing shots in real-time</p>
+                    <button class="btn btn-primary">Enable Alerts</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboards Section -->
+    <section id="leaderboards" class="leaderboards">
+        <div class="container">
+            <h2 class="section-title" style="color: #ffffff; font-family: 'Georgia', serif; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">LEADERBOARD</h2>
+            
+            <!-- Hole in One Leaderboard -->
+            <div class="leaderboard-section">
+                <h3 class="leaderboard-title">HOLE IN ONE</h3>
+                <div class="leaderboard-card">
+                    <div class="leaderboard-header">
+                        <span class="rank">#</span>
+                        <span class="player">Player</span>
+                        <span class="course">Course</span>
+                        <span class="hole">Hole</span>
+                        <span class="date">Date</span>
+                    </div>
+                    <div class="leaderboard-body" id="holeInOneList">
+                        <!-- Hole in one entries will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Closest to Pin Leaderboard -->
+            <div class="leaderboard-section">
+                <h3 class="leaderboard-title">CLOSEST TO PIN</h3>
+                <div class="course-filter">
+                    <label for="courseSelect">SELECT COURSE</label>
+                    <select id="courseSelect" class="course-select">
+                        <option value="all">All Courses</option>
+                        <option value="pebble-beach">Pebble Beach</option>
+                        <option value="augusta-national">Augusta National</option>
+                        <option value="st-andrews">St. Andrews</option>
+                        <option value="pinehurst">Pinehurst</option>
+                    </select>
+                </div>
+                <div class="leaderboard-card">
+                    <div class="leaderboard-header">
+                        <span class="rank">#</span>
+                        <span class="player">Player</span>
+                        <span class="course">Course</span>
+                        <span class="hole">Hole</span>
+                        <span class="distance">Distance</span>
+                    </div>
+                    <div class="leaderboard-body" id="closestToPinList">
+                        <!-- Closest to pin entries will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links Section -->
+    <section class="social-links">
+        <div class="container">
+            <h2 class="section-title">Follow PURED1</h2>
+            <div class="social-grid">
+                <a href="#" class="social-card facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-card instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-card tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+                <a href="#" class="social-card linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="LOGO.png" alt="PURED1 Logo" class="footer-logo-img">
+                </div>
+                <p class="footer-text">© 2024 PURED1. Revolutionizing golf entertainment through technology.</p>
+                <div class="footer-social">
+                    <a href="#" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="PillNav.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
